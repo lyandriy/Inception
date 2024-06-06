@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+
+  nginex:
+    build: /requirements/nginx/
+    image: nginx
+    container_name: 
+    ports:
+    restart: always
+    depends_on: wordpress
+    env_file: .env
+    volumes: 
+
+  wordpress:
+    build: /requirements/wordpress/
+    image: wordpress
+    ports:
+    restart: always
+    depends_on: mariadb
+    env_file: .env
+    volumes: 
+
+  mariadb:
+    build: /requirements/mariadb/
+    image: mariadb
+    ports:
+    restart: always
+    env_file: .env
+    volumes: 
+  
+  networks:
+    network-inception

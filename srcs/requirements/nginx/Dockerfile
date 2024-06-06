@@ -3,4 +3,10 @@ FROM debian:trixie-backports
 
 RUN apt update && apt-get install nginx -y && apt-get clean
 
-COPY
+RUN rm /etc/nginx/sites-enabled/default && rm /etc/nginx/nginx.conf
+
+COPY ./conf/default /etc/nginx/sites-enabled/
+
+COPY ./conf/nginx.conf /etc/nginx/
+
+CMD
