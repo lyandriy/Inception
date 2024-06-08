@@ -1,5 +1,5 @@
 #Dockerfile MariaDB
-FROM debian:trixie-backports
+FROM debian:bullseye
 
 RUN apt update && apt install mariadb-server -y && apt-get clean
 

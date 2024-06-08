@@ -11,6 +11,7 @@ Ejecutar contenedor
 https://atareao.es/tutorial/docker/ejecutar-contenedores-docker/
 
 Docker compose
+https://www.okteto.com/docs/1.17/reference/docker-compose/
 https://geekebrains.com/code-brains/docker-compose
 https://anderfernandez.com/blog/tutorial-docker-compose/
 https://coffeebytes.dev/es/docker-compose-tutorial-con-comandos-en-gnu-linux/
@@ -42,6 +43,13 @@ https://apuntes.de/docker-certificacion-dca/redireccion-de-puertos/#gsc.tab=0
 
 page:
 https://iesgn.github.io/curso_docker_2021/sesion5/redes.html
+
+nginx
+https://linuxy.top/es/nginx-debian
+https://friendhosting.net/en/blog/install-nginx-on-debian-11.php
+
+PHP
+https://www.hostingplus.com.es/blog/que-es-un-servidor-php-y-sus-tipos/#:~:text=Un%20PHP%20server%20o%20servidor,que%20realizan%20peticiones%20de%20acceso.
 
 Aunque los contenedores comparten el núcleo del sistema operativo subyacente, están diseñados para proporcionar aislamiento a nivel de proceso, red y sistema de archivos. Aquí te explico cómo funciona este aislamiento:
 

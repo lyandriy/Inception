@@ -1,5 +1,5 @@
 #Dockerfile NGINX
-FROM debian:trixie-backports
+FROM debian:bullseye
 
 RUN apt update && apt-get install nginx -y && apt-get clean
 

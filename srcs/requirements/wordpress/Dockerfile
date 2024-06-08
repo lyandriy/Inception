@@ -1,4 +1,6 @@
 #Dockerfile Wordpress
-FROM debian:trixie-backports
+FROM debian:bullseye
 
-RUN 
+RUN apt update && apt install php-fpm
+
+RUN apt install wget -y
