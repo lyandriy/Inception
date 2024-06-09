@@ -45,11 +45,18 @@ page:
 https://iesgn.github.io/curso_docker_2021/sesion5/redes.html
 
 nginx
+https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04
 https://linuxy.top/es/nginx-debian
 https://friendhosting.net/en/blog/install-nginx-on-debian-11.php
 
 PHP
 https://www.hostingplus.com.es/blog/que-es-un-servidor-php-y-sus-tipos/#:~:text=Un%20PHP%20server%20o%20servidor,que%20realizan%20peticiones%20de%20acceso.
+
+SSL/TLS
+https://www.ibm.com/docs/es/license-metric-tool?topic=certificate-step-1-creating-private-keys-certificates
+https://www.ibm.com/docs/es/license-metric-tool?topic=certificate-step-2-signing-certificates
+https://programmeratwork.com/2015/07/21/Servidor-nginx-con-SSL-en-un-paso-con-Docker/
+https://blog.eamexicano.com/ssl/certificado-openssl/
 
 Aunque los contenedores comparten el núcleo del sistema operativo subyacente, están diseñados para proporcionar aislamiento a nivel de proceso, red y sistema de archivos. Aquí te explico cómo funciona este aislamiento:
 
