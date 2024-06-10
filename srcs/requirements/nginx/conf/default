@@ -7,6 +7,5 @@ server
 
 	ssl_certificate /etc/ssl/nginxssl.crt;
     ssl_certificate_key /etc/ssl/nginxssl.key;
-
 	ssl_protocols TLSv1.2 TLSv1.3;
 }
