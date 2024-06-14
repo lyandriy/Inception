@@ -1,4 +1,4 @@
-service mysql start
+service mariadb start
 mysql -u root<<EOF
 
 CREATE DATABASE IF NOT EXISTS ${USER_MDB};
