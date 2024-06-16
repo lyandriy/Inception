@@ -24,5 +24,3 @@ ping nombre_de_otro_contenedor => 64 bytes from otro.my_netw (172.18.0.2): icmp_
                                   64 bytes from otro.my_netw (172.18.0.2): icmp_seq=3 ttl=64 time=0.056 ms
                                 
 docker network connect nombre_de_network id_o_nombre_de_contenedor => conectar un contenedor a una network
-
-3.48 3.24 7.24 8.29 4.30 3.27 4.21 6.42 3.48 4.32 6.14 = 56.39

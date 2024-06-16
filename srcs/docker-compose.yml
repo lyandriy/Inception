@@ -47,4 +47,5 @@ services:
         device: /home/lyandriy/data 
 
   networks:
-    network-inception
+    network-inception:
+      

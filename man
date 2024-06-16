@@ -42,6 +42,7 @@ https://loquemeinteresadelared.wordpress.com/2015/12/14/crear-una-nueva-red-en-d
 https://apuntes.de/docker-certificacion-dca/redireccion-de-puertos/#gsc.tab=0
 
 page:
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mariadb-php-lemp-stack-on-debian-10#step-2-installing-mariadb
 https://iesgn.github.io/curso_docker_2021/sesion5/redes.html
 
 nginx
