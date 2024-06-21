@@ -24,8 +24,8 @@ services:
 
   mariadb:
     build: /requirements/mariadb/
-    image: mariadb
-    container_name: mariadb
+    image: ${MDB}
+    container_name: ${MDB}
     restart: always
     depends_on: wordpress
     env_file: .env

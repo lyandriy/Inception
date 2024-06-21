@@ -42,10 +42,14 @@ https://loquemeinteresadelared.wordpress.com/2015/12/14/crear-una-nueva-red-en-d
 https://apuntes.de/docker-certificacion-dca/redireccion-de-puertos/#gsc.tab=0
 
 page:
+https://www.ionos.es/digitalguide/hosting/blogs/wordpress-en-nginx/ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mariadb-php-lemp-stack-on-debian-10#step-2-installing-mariadb
 https://iesgn.github.io/curso_docker_2021/sesion5/redes.html
 
 nginx
+https://kinsta.com/es/blog/proxy-inverso/
+https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/     proxy
+https://superadmin.es/blog/devops/proxy-inverso-wordpress-nginx/
 https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04
 https://linuxy.top/es/nginx-debian
 https://friendhosting.net/en/blog/install-nginx-on-debian-11.php

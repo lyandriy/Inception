@@ -1,5 +1,10 @@
 CMD:
 
+docker rm -f $(docker ps -aq) -> (docker rm -f) elimina todos los contenedore nombrados, ($(docker ps -aq)) lista todos los contenedores
+
+docker rmi -f $(docker images -aq) -> (docker rmi -f) elimina todas las imagenes nombradas, ($(docker images -aq)) lista todas las imagenes
+
+
 apt list --installed -> lista los paquetes instalados en el contenedor
 
 docker build -t nombre:etiqueta .   -> build consrtuye una imagen 

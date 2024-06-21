@@ -9,4 +9,6 @@ RUN openssl req -x509 -days 365 -nodes -newkey rsa:4096 \
 
 COPY ./conf/default /etc/nginx/sites-available/
 
+EXPOSE 80 443
+
 CMD ["nginx", "-g", "daemon off;"]
