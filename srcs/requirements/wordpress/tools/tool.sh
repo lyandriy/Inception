@@ -11,14 +11,22 @@ mv wordpress/wp-config-sample.php wordpress/wp-config.php
 
 cd wordpress
 
-sed -i "s/database_name_here/USER_MDB/1" wp-config.php
+sed -i "s/database_name_here/$USER_MDB/1" wp-config.php
 
-sed -i "s/username_here/USER_MDB/1" wp-config.php
+sed -i "s/username_here/$USER_MDB/1" wp-config.php
 
-sed -i "s/password_here/PASS_MDB/1" wp-config.php
+sed -i "s/password_here/$PASS_MDB/1" wp-config.php
 
-sed -i "s/localhost/MDB/1" wp-config.php
+sed -i "s/localhost/$MDB/1" wp-config.php
 
 mkdir -p /var/run/
+
+mkdir -p /var/log/
+
+mkdir -p /run/php
+
+touch php7.4-fpm.log
+
+chmod 644 /var/log/php7.4-fpm.log
 
 php-fpm7.4 -F
