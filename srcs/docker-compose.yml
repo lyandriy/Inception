@@ -6,10 +6,10 @@ services:
     build: /requirements/nginx/
     image: nginx
     container_name: nginx
-    ports: 443:443
+    ports: -"443:443"
     restart: always
     env_file: .env
-    volumes: web-vol:/var/www/html
+    volumes: -web-vol:/var/www/html
     networks: network-inception
 
   wordpress:
@@ -19,17 +19,17 @@ services:
     restart: always
     depends_on: nginx
     env_file: .env
-    volumes: web-vol:/var/www/html
+    volumes: -web-vol:/var/www/html
     networks: network-inception
 
   mariadb:
     build: /requirements/mariadb/
-    image: ${MDB}
-    container_name: ${MDB}
+    image: mariadb
+    container_name: mariadb
     restart: always
     depends_on: wordpress
     env_file: .env
-    volumes: db-vol:/var/lib/mysql
+    volumes: -db-vol:/var/lib/mysql
     networks: network-inception
   
   volumes:
@@ -38,13 +38,13 @@ services:
       driver: local
       driver_opts:
         type: none
-        device: /home/lyandriy/Desktop
+        device: /home/lyandriy/data
 
     web-vol:
       driver: local
       driver_opts:
         type: none
-        device: /home/lyandriy/Desktop
+        device: /home/lyandriy/data 
 
   networks:
     network-inception:

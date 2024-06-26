@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir -f $(COMPOSE_FILE) -p var/www/html
+mkdir -p var/www/html
 cd var/www/html
 wget https://wordpress.org/latest.tar.gz
 tar -xzf latest.tar.gz
@@ -19,11 +19,11 @@ sed -i "s/password_here/$PASS_MDB/1" wp-config.php
 
 sed -i "s/localhost/$MDB/1" wp-config.php
 
-mkdir -f $(COMPOSE_FILE) -p /var/run/
+mkdir -p /var/run/
 
-mkdir -f $(COMPOSE_FILE) -p /var/log/
+mkdir -p /var/log/
 
-mkdir -f $(COMPOSE_FILE) -p /run/php
+mkdir -p /run/php
 
 touch php7.4-fpm.log
 
