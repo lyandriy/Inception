@@ -38,13 +38,13 @@ services:
       driver: local
       driver_opts:
         type: none
-        device: /home/lyandriy/data
+        device: /home/lyandriy/Desktop
 
     web-vol:
       driver: local
       driver_opts:
         type: none
-        device: /home/lyandriy/data 
+        device: /home/lyandriy/Desktop
 
   networks:
     network-inception:

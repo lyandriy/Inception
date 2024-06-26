@@ -11,17 +11,18 @@ Ejecutar contenedor
 https://atareao.es/tutorial/docker/ejecutar-contenedores-docker/
 
 Docker compose
+https://anderfernandez.com/blog/tutorial-$(COMPOSE)/
 https://docs.docker.com/compose/reference/     comandos
-https://www.okteto.com/docs/1.17/reference/docker-compose/
-https://geekebrains.com/code-brains/docker-compose
-https://anderfernandez.com/blog/tutorial-docker-compose/
-https://coffeebytes.dev/es/docker-compose-tutorial-con-comandos-en-gnu-linux/
-https://www.baeldung.com/ops/docker-compose
-https://imaginaformacion.com/tutoriales/que-es-docker-compose
+https://www.okteto.com/docs/1.17/reference/$(COMPOSE)/
+https://geekebrains.com/code-brains/$(COMPOSE)
+https://anderfernandez.com/blog/tutorial-$(COMPOSE)/
+https://coffeebytes.dev/es/$(COMPOSE)-tutorial-con-comandos-en-gnu-linux/
+https://www.baeldung.com/ops/$(COMPOSE)
+https://imaginaformacion.com/tutoriales/que-es-$(COMPOSE)
 
 Dockerfile
 https://docs.docker.com/reference/dockerfile/
-https://desarrollofront.medium.com/las-10-instrucciones-imprescindibles-para-crear-un-dockerfile-bb439ff836d9
+https://desarrollofront.medium.com/las-10-instrucciones-imprescindibles-f $(COMPOSE_FILE) -para-crear-un-dockerfile-bb439ff836d9
 
 Comandos Docker
 https://www.hostinger.es/tutoriales/comandos-docker
@@ -32,40 +33,40 @@ https://atareao.es/tutorial/docker/redes-en-docker/
 https://www.josedomingo.org/pledin/2020/02/redes-en-docker/
 
 Volumenes
-https://kinsta.com/es/blog/volumenes-docker-compose/
+https://kinsta.com/es/blog/volumenes-$(COMPOSE)/
 
 WordPress
 https://www.youtube.com/watch?v=a86m_lTQzz4
 
 network
-https://www.linkedin.com/pulse/docker-mapeo-de-puertos-port-mapping-gabriel-alonso-ibarlucea/
+https://www.linkedin.com/pulse/docker-mapeo-de-f $(COMPOSE_FILE) -puertos-f $(COMPOSE_FILE) -port-mapping-gabriel-alonso-ibarlucea/
 https://loquemeinteresadelared.wordpress.com/2015/12/14/crear-una-nueva-red-en-docker-y-conectarle-dos-nuevos-contenedores/
-https://apuntes.de/docker-certificacion-dca/redireccion-de-puertos/#gsc.tab=0
+https://apuntes.de/docker-certificacion-dca/redireccion-de-f $(COMPOSE_FILE) -puertos/#gsc.tab=0
 
 page:
 https://www.ionos.es/digitalguide/hosting/blogs/wordpress-en-nginx/ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mariadb-php-lemp-stack-on-debian-10#step-2-installing-mariadb
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mariadb-f $(COMPOSE_FILE) -php-lemp-stack-on-debian-10#step-2-installing-mariadb
 https://iesgn.github.io/curso_docker_2021/sesion5/redes.html
 
 nginx
 https://kinsta.com/es/blog/proxy-inverso/
-https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/     proxy
+https://docs.nginx.com/nginx/admin-guide/web-server/reverse-f $(COMPOSE_FILE) -proxy/     proxy
 https://superadmin.es/blog/devops/proxy-inverso-wordpress-nginx/
 https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04
 https://linuxy.top/es/nginx-debian
 https://friendhosting.net/en/blog/install-nginx-on-debian-11.php
 
 PHP
-https://www.hostingplus.com.es/blog/que-es-un-servidor-php-y-sus-tipos/#:~:text=Un%20PHP%20server%20o%20servidor,que%20realizan%20peticiones%20de%20acceso.
+https://www.hostingplus.com.es/blog/que-es-un-servidor-f $(COMPOSE_FILE) -php-y-sus-tipos/#:~:text=Un%20PHP%20server%20o%20servidor,que%20realizan%20peticiones%20de%20acceso.
 
 SSL/TLS
-https://www.ibm.com/docs/es/license-metric-tool?topic=certificate-step-1-creating-private-keys-certificates
+https://www.ibm.com/docs/es/license-metric-tool?topic=certificate-step-1-creating-f $(COMPOSE_FILE) -private-keys-certificates
 https://www.ibm.com/docs/es/license-metric-tool?topic=certificate-step-2-signing-certificates
-https://programmeratwork.com/2015/07/21/Servidor-nginx-con-SSL-en-un-paso-con-Docker/
+https://programmeratwork.com/2015/07/21/Servidor-nginx-con-SSL-en-un-f $(COMPOSE_FILE) -paso-con-Docker/
 https://blog.eamexicano.com/ssl/certificado-openssl/
 
 MariaDB
-https://conpilar.es/como-crear-cuentas-de-usuarios-de-mariadb-y-otorgar-privilegios/
+https://conpilar.es/como-crear-cuentas-de-usuarios-de-mariadb-y-otorgar-f $(COMPOSE_FILE) -privilegios/
 
 Aunque los contenedores comparten el núcleo del sistema operativo subyacente, están diseñados para proporcionar aislamiento a nivel de proceso, red y sistema de archivos. Aquí te explico cómo funciona este aislamiento:
 
