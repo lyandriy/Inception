@@ -2,50 +2,60 @@ version: '3'
 
 services:
 
-  nginex:
-    build: /requirements/nginx/
+  nginx:
+    build: ./requirements/nginx/
     image: nginx
     container_name: nginx
-    ports: -"443:443"
+    ports:
+      -"443:443"
     restart: always
     env_file: .env
-    volumes: -web-vol:/var/www/html
-    networks: network-inception
+    volumes:
+      - "web-vol:/var/www/html"
+    networks:
+      - network-inception
 
   wordpress:
-    build: /requirements/wordpress/
+    build: ./requirements/wordpress/
     image: wordpress
     container_name: wordpress
     restart: always
-    depends_on: nginx
+    depends_on:
+      - "nginx"
     env_file: .env
-    volumes: -web-vol:/var/www/html
-    networks: network-inception
+    volumes:
+      - "web-vol:/var/www/html"
+    networks:
+      - network-inception
 
   mariadb:
-    build: /requirements/mariadb/
+    build: ./requirements/mariadb/
     image: mariadb
     container_name: mariadb
     restart: always
-    depends_on: wordpress
+    depends_on:
+      - wordpress
     env_file: .env
-    volumes: -db-vol:/var/lib/mysql
-    networks: network-inception
+    volumes:
+      - "db-vol:/var/lib/mysql"
+    networks:
+      - network-inception
   
-  volumes:
+volumes:
 
-    db-vol:
-      driver: local
-      driver_opts:
-        type: none
-        device: /home/lyandriy/data
+  db-vol:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/lyandriy/data
+  web-vol:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/lyandriy/data 
 
-    web-vol:
-      driver: local
-      driver_opts:
-        type: none
-        device: /home/lyandriy/data 
-
-  networks:
-    network-inception:
-      
+networks:
+  network-inception:
+    driver: bridge
