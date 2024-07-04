@@ -68,6 +68,9 @@ https://blog.eamexicano.com/ssl/certificado-openssl/
 MariaDB
 https://conpilar.es/como-crear-cuentas-de-usuarios-de-mariadb-y-otorgar-privilegios/
 
+Archivo de host
+https://www.ionos.com/digitalguide/server/configuration/hosts-file/
+
 Aunque los contenedores comparten el núcleo del sistema operativo subyacente, están diseñados para proporcionar aislamiento a nivel de proceso, red y sistema de archivos. Aquí te explico cómo funciona este aislamiento:
 
 1. **Espacios de nombres (Namespaces)**: Los contenedores utilizan espacios de nombres para proporcionar un entorno aislado para procesos, redes, ID de usuario y sistemas de archivos. Esto significa que cada contenedor tiene su propio conjunto de identificadores para procesos, interfaces de red, usuarios y puntos de montaje de sistema de archivos. Por lo tanto, los procesos que se ejecutan dentro de un contenedor no son visibles desde fuera del contenedor ni interactúan con los procesos de otros contenedores.

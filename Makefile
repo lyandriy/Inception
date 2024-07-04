@@ -13,7 +13,7 @@ images:
 restart:
 	$(COMPOSE) -f $(COMPOSE_FILE) -p $(PROYEECT_NAME) restart
 up:
-	$(COMPOSE) -f $(COMPOSE_FILE) -p $(PROYEECT_NAME) up
+	$(COMPOSE) -f $(COMPOSE_FILE) -p $(PROYEECT_NAME) up -d
 stop:
 	$(COMPOSE) -f $(COMPOSE_FILE) -p $(PROYEECT_NAME) stop
 start:
