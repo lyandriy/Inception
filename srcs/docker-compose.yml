@@ -9,22 +9,10 @@ services:
     ports:
       - "443:443"
     depends_on:
-      - "wordpress"
+      - wordpress
     restart: always
-    env_file: .env
-    volumes:
-      - "webvol:/var/www/html"
-    networks:
-      - net-inception
-
-  wordpress:
-    build: ./requirements/wordpress/
-    image: wordpress
-    container_name: wordpress
-    restart: always
-    depends_on:
-      - "mariadb"
-    env_file: .env
+    env_file: 
+      - .env
     volumes:
       - "webvol:/var/www/html"
     networks:
@@ -35,9 +23,24 @@ services:
     image: mariadb
     container_name: mariadb
     restart: always
-    env_file: .env
+    env_file: 
+      - .env
     volumes:
       - "dbvol:/var/lib/mysql"
+    networks:
+      - net-inception
+
+  wordpress:
+    build: ./requirements/wordpress/
+    image: wordpress
+    container_name: wordpress
+    restart: always
+    depends_on:
+      - mariadb
+    env_file:
+      - .env
+    volumes:
+      - "webvol:/var/www/html"
     networks:
       - net-inception
   

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-service mariadb start
+service mysql start
 
 echo "CREATE DATABASE IF NOT EXISTS $DATABASE;
 CREATE USER IF NOT EXISTS '$USER_MDB'@'%' IDENTIFIED BY '$USER_PASS';
