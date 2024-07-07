@@ -1,11 +1,12 @@
 #Dockerfile MariaDB
-FROM debian:bullseye
+FROM debian:buster
 
-RUN apt update && apt-get install mariadb-server -y && apt-get clean
+RUN apt-get update && apt-get install mariadb-server -y && apt-get clean
 
-COPY ./tools/mdb.sh /
-COPY ./conf/50-server.cnf /etc/mysql/mariadb.conf.d 
+COPY ./tools/mdb.sh /home
+COPY ./conf/my-server.cnf /etc/mysql/mariadb.conf.d/
 
-EXPOSE 3306
+RUN mkdir /var/run/mysqld && chown mysql:mysql /var/run/mysqld
+RUN chmod 755 /home/mdb.sh && /home/mdb.sh
 
-CMD ["bash", "./mdb.sh"]
+RUN /usr/bin/mysqld_safe
