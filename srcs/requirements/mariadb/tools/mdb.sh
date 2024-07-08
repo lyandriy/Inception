@@ -11,3 +11,5 @@ FLUSH PRIVILEGES;" > /tmp/confmdb.sql
 mysql < /tmp/confmdb.sql
 
 rm /tmp/confmdb.sql
+
+exec mysqld_safe
