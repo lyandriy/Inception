@@ -1,13 +1,13 @@
 #Dockerfile Wordpress
-FROM debian:bullseye
+FROM debian:buster
 
-RUN apt update && apt install php-fpm php7.4-fpm php-mysql -y
+RUN apt-get update && apt-get install php-fpm php-mysql -y
 
-RUN apt install wget -y
+RUN apt-get install wget -y
 
 COPY ./tools/tool.sh /
-COPY ./conf/php7.4-fpm.log /var/log/
-COPY ./conf/www.conf /etc/php/7.4/fpm/pool.d/
+COPY ./conf/php7.3-fpm.log /var/log/
+COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/
 
 EXPOSE 9000
 
