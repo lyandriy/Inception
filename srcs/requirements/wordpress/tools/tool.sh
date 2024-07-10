@@ -2,16 +2,15 @@
 
 mkdir -p var/www/html
 cd var/www/html
+
 wget https://wordpress.org/latest.tar.gz
 tar -xzf latest.tar.gz
 
 chmod -R 755 wordpress
-
 chown -R www-data:www-data wordpress
 
-mv wordpress/wp-config-sample.php wordpress/wp-config.php
-
-cd wordpress
+mv wordpress/* .
+mv wp-config-sample.php wp-config.php
 
 sed -i "s/database_name_here/$DATABASE/1" wp-config.php
 
@@ -25,7 +24,7 @@ mkdir -p /var/run/
 
 mkdir -p /var/log/
 
-mkdir -p /run/php
+mkdir -p /run/php/
 
 touch php7.3-fpm.log
 

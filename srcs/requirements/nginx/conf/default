@@ -4,6 +4,7 @@ server
 	listen [::]:443 ssl;
     root /var/www/html/wordpress;
 	server_name lyandriy.42.fr;
+    index index.php index.html index.htm;
 
 	ssl_certificate /etc/ssl/nginxssl.crt;
     ssl_certificate_key /etc/ssl/nginxssl.key;
