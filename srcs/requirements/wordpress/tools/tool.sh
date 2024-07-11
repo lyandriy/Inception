@@ -30,4 +30,12 @@ touch php7.3-fpm.log
 
 chmod 644 /var/log/php7.3-fpm.log
 
+cd /home
+wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+chmod +x wp-cli.phar
+sudo mv wp-cli.phar /usr/local/bin/wp
+
+wp core install --url=$DOMAIN_NAME --title=$TITLE_WP --admin_user=$USER_MDB --admin_password=$USER_PASS --admin_email=$EMAIL_WP
+wp plugin activate akismet
+
 php-fpm7.3 -F
