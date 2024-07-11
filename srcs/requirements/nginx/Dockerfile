@@ -1,7 +1,7 @@
 #Dockerfile NGINX
 FROM debian:buster
 
-RUN apt update && apt-get install nginx -y && apt install openssl -y && apt-get clean
+RUN apt update; apt-get install nginx -y; apt install openssl -y; apt-get clean
 
 RUN openssl req -x509 -days 365 -nodes -newkey rsa:4096 \
     -keyout /etc/ssl/nginxssl.key \
