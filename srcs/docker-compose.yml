@@ -61,4 +61,4 @@ volumes:
 
 networks:
   net-inception:
-    driver: bridge
+    name: net-inception
