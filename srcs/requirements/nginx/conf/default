@@ -3,7 +3,7 @@ server
 {
 	listen 443 ssl;
 	listen [::]:443 ssl;
-    root /var/www/html/wordpress;
+    root /var/www/html;
 	server_name lyandriy.42.fr;
     index index.php index.html index.htm;
 
