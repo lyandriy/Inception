@@ -13,4 +13,4 @@ COPY ./tools/tool.sh /
 COPY ./conf/php7.3-fpm.log /var/log/
 COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/
 
-CMD ["bash", "./tool.sh"]
+CMD ["/bin/bash", "./tool.sh"]
