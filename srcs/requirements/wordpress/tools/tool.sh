@@ -26,10 +26,12 @@ mkdir -p /var/log/
 
 mkdir -p /run/php/
 
-touch php7.3-fpm.log
+touch /var/log/php7.3-fpm.log
 
 chmod 644 /var/log/php7.3-fpm.log
 
 wp core install --url=$DOMAIN_NAME --title=$TITLE_WP --admin_user=$USER_NAME --admin_password=$USER_PASS --admin_email=$EMAIL_WP --skip-email --allow-root
+
+wp user create $USER_WP_NAME $USER_WP_EMAIL --user_pass=$USER_WP_PASS --role=editor --allow-root
 
 php-fpm7.3 -F

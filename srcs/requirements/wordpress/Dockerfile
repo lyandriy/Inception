@@ -10,7 +10,7 @@ RUN chmod +x wp-cli.phar
 RUN mv wp-cli.phar /usr/local/bin/wp
 
 COPY ./tools/tool.sh /
-COPY ./conf/php7.3-fpm.log /var/log/
+COPY ./conf/php-fpm.conf /usr/local/etc/php-fpm.conf
 COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/
 
 CMD ["/bin/bash", "./tool.sh"]

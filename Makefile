@@ -1,8 +1,8 @@
-COMPOSE = docker compose
+COMPOSE = docker-compose
 COMPOSE_FILE = srcs/docker-compose.yml
 PROYEECT_NAME = inception
 
-.PHONY: build down images restart up stop start pause ls
+.PHONY: build down images restart up stop start ls prune ps logs 
 
 build:
 	mkdir -p /home/lyandriy/data/dbvol /home/lyandriy/data/webvol
@@ -19,8 +19,6 @@ stop:
 	$(COMPOSE) -f $(COMPOSE_FILE) -p $(PROYEECT_NAME) stop
 start:
 	$(COMPOSE) -f $(COMPOSE_FILE) -p $(PROYEECT_NAME) start
-pause:
-	$(COMPOSE) -f $(COMPOSE_FILE) -p $(PROYEECT_NAME) pause
 ls:
 	$(COMPOSE) -f $(COMPOSE_FILE) -p $(PROYEECT_NAME) ls
 logs:
