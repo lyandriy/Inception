@@ -1,0 +1,56 @@
+Crear docker-compose.yml
+
+primero indicar la version de docker que vamos a usar.
+definir servicios:
+aqui se define como se van a crear las imagenes de los cntenedores.
+crear volumenes.
+crear network
+
+Archivo .env
+aqui van todos los define de los usuarios, contraseñas, correos etc. Va fuera de carpeta del proyecto.
+
+
+Requirements
+cada conteiner va en una carpeta, donde hay su Dockerfile y carpetas de configuracion y script
+Todos los contenedores se construyen a partir de una imagen de debian o alpine
+
+Mariadb
+Dockerfile: FROM indicamos la imagen a partir de la cual vamos a construir el contenedores
+RUN todo lo que se va a ejecutar antes de crear el contenedor, hace falta hacer update y descargar los paquetes necesarios, en este caso mariadb-server
+COPY se copian los archivos de configuracion y script
+Hay que crear una carpeta donde estaran las configuraciones de mysqld y darle todos los permisos necesarios y grupo de mysql (que es un grupo estandar de mysql)
+CMD correr el script que tenemos
+
+Archivo de configuracion my-server.cnf
+es un archivo de configuracion de donde mysql coge los datos necesarios para funcionar bien. Con [mysqld] indicamos que esta congiguracion va para el demonio de mysql (demonio es que el programa se ejecuta en el segundo plano). Aqui indicamos el puerto por el que va a escuchar y bin-address es la direccion de la que vamos a recibir datos. el resto son rutas de diferentes archivos con los que trabaja mysql. se pone alli para que mysql sepa donde estan.
+
+Script
+service mysql start - iniciamos el servicio de mysql
+creamos un archivo script para mysql. Son comandos que vamos a correr en mysql una ves estamos dentro de mysql. Aqui  tenemos los comados para crear base de datos, un usuario con la contraseña y cambiamos la contraseña de usuario root.
+Al mysql le mandamos el script creado, luego matamos el proceso de mysql y corremos el demonio de mysql, de esta forma el contenedor seguira levandato, por que tenemos un programa corriendo, que nos sirve para recoger los datos de wordpress.
+
+NGINX
+Dockerfile: instalamos nginx y el paquete para crea nuestra clave y firma de ssl
+Creamos la clave de ssl y la autofirmamos
+Copiar el archivo de configuracion y correr el demonio de nginx
+
+Archivo de configuracion default
+Es el archivo con el cual nginx se configura. indicamos con 'listen' el puerto por el cual va a escuchar nuestro contenedor. 'Root' indicamos el archivo donde esta wordpress, 'server_name' el nombre del dominio. 'ssl_certificate', 'ssl_certificate_key' indicamos la ruta donde esta el sertificado y la clave ssl. 'ssl_protocols' indicamos que tipo de TLS queremos usar.
+location son configuraciones para las solicitudes del cliente, lo mas importande es esta linea fastcgi_pass wordpress:9000; para indicar el puerto.
+
+Wordpress
+Dockerfile: instalar php-fpm, php-mysql, curl y wget. php-fpm es el servidor web para wordpress, es el servidor que si sabe interpretar lenguaje php. 
+Descargar software para configurar wordpress desde un script, es wp-cli. le damos los permisos y lo movemos en la carpeta desde donde se puede ejecutar.
+Copiams los archivos de configuracion y script.
+Ejecutamos el script
+
+Archivo de configuracion www.conf
+Lo mas importante es indicar el usuario y grupo que es www-data(es una estandar para wordpress) e indicar el puerto por el que va a escuchar listen = 0.0.0.0:9000.
+
+Script
+en la carpeta var/www/html tenemos que meter los archivos de wordpress que vamos a descargas desde la pagina https://wordpress.org/latest.tar.gz, descomprimir, dar permisos y el grupo. Para configurar wordpress hay que cambiar el nombre del archivo que hemos descargado wp-config-sample.php a wp-config.php y cambiar unas lineas dentro dde este archivo, indicando el usuario, nombre de base de datos, contraseña y nombre del contenedor.
+Luego con ayuda de wp-cli configuramos la pagina de wordpress poniendo el ususario que es el administrador y creando otro usuario.
+Al final corremos el servidor php
+
+Configuracion de equipo.
+En la carpet etc hay un archivo hosts donde tenemos qe cambiar el nombre del dominio, en nuestro caso en vez de localhost tiene que seren login.42.fr
